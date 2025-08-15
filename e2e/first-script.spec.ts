@@ -1,11 +1,9 @@
 import { test, expect } from '@playwright/test';
 import dotenv from 'dotenv';
+
 dotenv.config();
 const username = process.env.MY_USERNAME;
 const password = process.env.MY_PASSWORD;
-
-console.log(username);
-console.log(password);
 
 test('Page has expected title', async ({ page }) => {
   await page.goto('https://www.collaboard.app/');
@@ -31,9 +29,6 @@ test('Click Sign in', async ({ page }) => {
 });
 
 test('Input email and password and login', async ({ page }) => {
-  console.log(username);
-  console.log(password);
-
   await page.goto('https://www.collaboard.app/');
   
   await page.getByRole('link', { name: 'Login' }).click();
