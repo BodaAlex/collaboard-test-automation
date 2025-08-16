@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 const username = process.env.MY_USERNAME;
 const password = process.env.MY_PASSWORD;
-console.log("hello");
 
 test.beforeEach( async({ page }) => {
     // login
