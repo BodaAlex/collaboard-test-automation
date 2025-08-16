@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 const username = process.env.MY_USERNAME;
 const password = process.env.MY_PASSWORD;
-console.log("random update to check git");
 
 test('Page has expected title', async ({ page }) => {
   await page.goto('https://www.collaboard.app/');
