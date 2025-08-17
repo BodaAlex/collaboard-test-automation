@@ -25,6 +25,21 @@ cd collaboard-test-automation
 npm install
 ```
 
+## Environment Variables
+
+To run the tests, you need to create a `.env` file in the project root directory. This file will store your environment variables securely.
+
+### Creating the .env File
+
+1. In the root of your project, create a file named `.env`.
+2. Add the following variables to the `.env` file:
+
+```plaintext
+MY_USERNAME=yourcollaboard@account.example
+MY_PASSWORD=yourcollaboardpassword
+```
+
+
 ## Run Tests
 To execute the tests, use the following command:
 
