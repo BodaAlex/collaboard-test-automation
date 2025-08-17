@@ -29,3 +29,14 @@ test('Update First and Last names', async ({ page }) => {
     await page.getByText("Save").nth(0).click();
     await expect(page.getByText("Profile information successfully saved")).toBeVisible();
 })
+
+test('Update Country and Phone number', async ({ page }) => {
+    await page.getByRole('link').filter({ hasText: "Profile" }).click();
+    await page.locator('div[role=combobox]').nth(2).click();
+    await page.keyboard.type("Romania");
+    await page.keyboard.press('Enter');
+    await expect(page.getByPlaceholder('+1 (702) 123-')).toHaveValue("+40");
+    await page.getByPlaceholder('+1 (702) 123-').pressSequentially('743576452');
+    await page.getByText("Save").nth(0).click();
+    await expect(page.getByText("Profile information successfully saved")).toBeVisible();
+})
