@@ -14,7 +14,7 @@ Before you begin, ensure you have the following installed on your machine:
 To get a local copy of the project, clone the repository using the following command:
 
 ```bash
-git clone https://github.com/yourusername/collaboard-test-automation.git
+git clone git@github.com:BodaAlex/collaboard-test-automation.git
 ```
 
 ## Install dependencies
