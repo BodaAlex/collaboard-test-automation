@@ -40,3 +40,17 @@ test('Update Country and Phone number', async ({ page }) => {
     await page.getByText("Save").nth(0).click();
     await expect(page.getByText("Profile information successfully saved")).toBeVisible();
 })
+
+test('Update company related fields', async ({ page }) => {
+    await page.getByRole('link').filter({ hasText: "Profile" }).click();
+    await page.getByRole('textbox', { name: 'Company Name' }).fill("ACME");
+    await page.locator('div[role=combobox]').nth(0).click();
+    await page.keyboard.type("Information");
+    await page.keyboard.press('Enter');
+    await page.getByRole('textbox', { name: 'Your role in the company' }).fill("QA Engineer");
+    await page.locator('div[role=combobox]').nth(1).click();
+    await page.keyboard.type("201");
+    await page.keyboard.press('Enter');
+    await page.getByText("Save").nth(0).click();
+    await expect(page.getByText("Profile information successfully saved")).toBeVisible();
+})
